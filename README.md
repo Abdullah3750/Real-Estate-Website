@@ -14,7 +14,6 @@ The site presents the company's current property listing with a photo gallery, v
 - Embedded video clips of the property
 - Enquiry form connected via Formspree
 - Fully responsive with a mobile navigation menu
-- Custom design matched to the company's brand colours and logo
 
 ## Built With
 
