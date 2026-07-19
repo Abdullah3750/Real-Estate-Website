@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10 Marla Luxury Designer Furnished House — Bahria Enclave, Islamabad | Inshar Ul Haq &amp; Company</title>
+<meta name="description" content="A 10 Marla luxury designer furnished house in Bahria Enclave, Islamabad. A+ quality construction, 5 bedrooms with attached baths, 2 kitchens, rooftop sitting and BBQ area.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .page-top{padding:130px 0 0;}
+  .back-link{
+    font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--muted-dim);display:inline-flex;gap:8px;align-items:center;margin-bottom:28px;
+  }
+  .back-link:hover{color:var(--brass);}
+
+  .house-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:28px;flex-wrap:wrap;}
+  .house-head h1{font-size:clamp(28px,4.2vw,50px);margin-top:10px;font-weight:500;max-width:18ch;line-height:1.1;}
+  .house-loc{margin-top:10px;color:var(--muted);font-size:15px;}
+  .house-price{text-align:right;font-family:'JetBrains Mono',monospace;color:var(--brass);font-size:22px;}
+  .house-price a{color:var(--brass);border-bottom:1px solid var(--brass);padding-bottom:2px;}
+  .house-price a:hover{color:var(--ink);border-color:var(--ink);}
+  .house-price .status{
+    display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dim);
+    margin-top:6px;font-family:'Inter',sans-serif;
+  }
+
+  .designer-credit{
+    display:flex;flex-wrap:wrap;gap:10px 28px;margin:0 0 40px;
+    padding:16px 20px;border:1px solid var(--line-soft);background:var(--surface);
+  }
+  .designer-credit div{font-size:13px;}
+  .designer-credit .role{
+    display:block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--muted-dim);margin-bottom:3px;
+  }
+  .designer-credit .name{color:var(--brass);font-family:'Fraunces',serif;font-size:15px;}
+
+  /* --- hero photo --- */
+  .hero-photo{
+    width:100%;height:520px;overflow:hidden;border-radius:2px;margin-bottom:14px;
+    border:1px solid var(--line-soft);
+  }
+  @media (max-width:760px){.hero-photo{height:280px;}}
+  .hero-photo img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;cursor:zoom-in;}
+
+  /* --- photo grid --- */
+  .gallery-section{padding:70px 0 0;}
+  .photo-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+  }
+  @media (max-width:900px){.photo-grid{grid-template-columns:repeat(3,1fr);}}
+  @media (max-width:620px){.photo-grid{grid-template-columns:repeat(2,1fr);}}
+  .photo-grid button{
+    padding:0;border:1px solid var(--line-soft);background:var(--surface);cursor:zoom-in;
+    aspect-ratio:4/3;overflow:hidden;border-radius:2px;display:block;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .photo-grid button:hover{border-color:var(--brass);transform:translateY(-2px);}
+  .photo-grid img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;}
+
+  .grid-note{
+    margin-top:20px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--muted-dim);
+    letter-spacing:.06em;text-align:center;
+  }
+
+  /* --- lightbox --- */
+  .lightbox{
+    position:fixed;inset:0;z-index:200;background:rgba(20,34,56,0.94);
+    display:none;align-items:center;justify-content:center;padding:40px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:2px;}
+  .lb-close,.lb-prev,.lb-next{
+    position:absolute;background:rgba(250,247,240,0.12);border:1px solid rgba(250,247,240,0.35);
+    color:#faf7f0;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:18px;
+    display:flex;align-items:center;justify-content:center;transition:background .2s ease;
+  }
+  .lb-close:hover,.lb-prev:hover,.lb-next:hover{background:var(--brass);border-color:var(--brass);}
+  .lb-close{top:24px;right:24px;}
+  .lb-prev{left:24px;top:50%;transform:translateY(-50%);}
+  .lb-next{right:24px;top:50%;transform:translateY(-50%);}
+  .lb-counter{
+    position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;font-size:11.5px;color:rgba(250,247,240,0.75);letter-spacing:.1em;
+  }
+  @media (max-width:620px){
+    .lightbox{padding:16px;}
+    .lb-prev{left:8px;} .lb-next{right:8px;}
+  }
+
+  /* --- details --- */
+  .details{padding:80px 0 0;}
+  .details-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:70px;}
+  @media (max-width:900px){.details-grid{grid-template-columns:1fr;gap:40px;}}
+  .lede-text{color:var(--muted);font-size:16px;max-width:60ch;}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-icon.png" alt="Inshar Ul Haq &amp; Company">
+      <div class="logo-text">INSHAR UL HAQ <span class="amp">&amp; Company</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="index.html#homes">Homes</a>
+      <a href="index.html#about">Our Craft</a>
+      <a href="#contact" class="cta">Inquire</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="page-top">
+  <div class="wrap">
+    <a href="index.html#homes" class="back-link">← Back to homes</a>
+
+    <div class="house-head">
+      <div>
+        <div class="dim-label">Featured Home</div>
+        <h1>10 Marla Luxury Designer Furnished House</h1>
+        <div class="house-loc">Bahria Enclave, Islamabad</div>
+      </div>
+      <div class="house-price"><a href="#contact">Price on Request →</a>
+        <span class="status">Furnished &amp; move-in ready</span>
+      </div>
+    </div>
+
+    <div class="designer-credit">
+      <div><span class="role">Structure Design</span><span class="name">Mian Inshar Ul Haq</span></div>
+      <div><span class="role">Interior &amp; Exterior Design</span><span class="name">Irum Inshar</span></div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="assets/photos/01-exterior-night.jpg" alt="" data-index="0">
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="dim-label" style="margin-bottom:18px;">Photo Gallery</div>
+    <div class="photo-grid" id="photoGrid">
+      <!-- Photos: add more by copying a button block and pointing it at a new file in assets/photos/ -->
+      <button type="button" data-index="0"><img src="assets/photos/01-exterior-night.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="1"><img src="assets/photos/02-exterior-day.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="2"><img src="assets/photos/03-porch-day.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="3"><img src="assets/photos/04-entrance-night.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="4"><img src="assets/photos/05-drawing-room.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="5"><img src="assets/photos/06-tv-lounge-onyx.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="6"><img src="assets/photos/07-lounge-wide.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="7"><img src="assets/photos/08-lounge-bar.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="8"><img src="assets/photos/09-lounge-mural.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="9"><img src="assets/photos/10-kitchen-main.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="10"><img src="assets/photos/11-kitchen-pantry.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="11"><img src="assets/photos/12-kitchen-green.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="12"><img src="assets/photos/13-kitchen-green-2.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="13"><img src="assets/photos/14-staircase.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="14"><img src="assets/photos/15-staircase-detail.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="15"><img src="assets/photos/16-hallway-bedroom.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="16"><img src="assets/photos/17-bedroom-master.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="17"><img src="assets/photos/18-bedroom-black.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="18"><img src="assets/photos/19-bedroom-green.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="19"><img src="assets/photos/20-bedroom-beige.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="20"><img src="assets/photos/21-bathroom-floral.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="21"><img src="assets/photos/22-bathroom-shower.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="22"><img src="assets/photos/23-bathroom-marble.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="23"><img src="assets/photos/24-bathroom-onyx.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="24"><img src="assets/photos/25-bathroom-wood.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="25"><img src="assets/photos/26-terrace-balcony.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="26"><img src="assets/photos/27-courtyard-aerial.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="27"><img src="assets/photos/28-courtyard-waterfall.jpg" alt="" loading="lazy"></button>
+      <button type="button" data-index="28"><img src="assets/photos/29-rooftop.jpg" alt="" loading="lazy"></button>
+    </div>
+    <div class="grid-note">Click any photo to enlarge · 29 photos</div>
+  </div>
+</section>
+
+<section class="details">
+  <div class="wrap">
+    <p class="lede-text">A beautifully designed 10 Marla luxury furnished house in Bahria Enclave, Islamabad, built with premium quality construction and modern architecture. Located in a prime location with a beautiful front lawn, this house offers the perfect combination of luxury, comfort, and quality.</p>
+
+    <div class="details-grid" style="margin-top:46px;">
+      <div>
+        <div class="dim-label" style="margin-bottom:16px;">At a Glance</div>
+        <div class="spec-sheet">
+          <div class="spec-row"><span class="k">Plot Size</span><span class="v">10 Marla</span></div>
+          <div class="spec-row"><span class="k">Bedrooms</span><span class="v">5, all attached baths</span></div>
+          <div class="spec-row"><span class="k">Kitchens</span><span class="v">2</span></div>
+          <div class="spec-row"><span class="k">Lounges</span><span class="v">2 TV Lounges</span></div>
+          <div class="spec-row"><span class="k">Extra Rooms</span><span class="v">Drawing + Study</span></div>
+          <div class="spec-row"><span class="k">Servant Qtr.</span><span class="v">Attached bath</span></div>
+          <div class="spec-row"><span class="k">Location</span><span class="v">Bahria Enclave</span></div>
+          <div class="spec-row"><span class="k">Status</span><span class="v">Move-in ready</span></div>
+        </div>
+        <a href="#contact" class="inquire-link">Inquire about this home →</a>
+      </div>
+
+      <div>
+        <div class="section-title" style="border-top:0;padding-top:0;margin-top:0;">Construction &amp; Features</div>
+        <ul class="check-list">
+          <li>A+ Quality Construction</li>
+          <li>Awal Special Bricks</li>
+          <li>Itehad Steel</li>
+          <li>Complete Termite Protection System</li>
+          <li>Popular PVC Pipes &amp; Premium Conduit Fittings</li>
+          <li>Pakistan Cables Wiring</li>
+          <li>TJ Premium Switches</li>
+          <li>Double-Glazed Aluminium Windows</li>
+          <li>8-Foot Solid Mahogany Wooden Doors</li>
+          <li>Imported Tiles</li>
+          <li>Black Granite Marble</li>
+          <li>Imported Glass Work</li>
+          <li>Kansai Paint</li>
+          <li>Elegant Waterfall</li>
+          <li>Imported Chandeliers &amp; Wall Lights</li>
+          <li>Haier Kitchen Accessories</li>
+          <li>Concealed Commodes &amp; Rain Showers</li>
+        </ul>
+
+        <div class="section-title">Accommodation</div>
+        <ul class="amenity-list">
+          <li>5 Spacious Bedrooms with Attached Bathrooms</li>
+          <li>2 Modern Kitchens</li>
+          <li>2 TV Lounges</li>
+          <li>Drawing Room</li>
+          <li>Study Room</li>
+          <li>Servant Quarter with Attached Bathroom</li>
+        </ul>
+
+        <div class="section-title">Rooftop Highlights</div>
+        <ul class="amenity-list">
+          <li>Beautiful Sitting Area</li>
+          <li>BBQ Area</li>
+          <li>Perfect Space for Family Gatherings &amp; Evening Relaxation</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="film-block">
+      <div class="film-label dim-label" style="justify-content:center;">Video Clips — full walkthrough coming soon</div>
+      <div class="reel-stage">
+        <div class="reel active" data-reel="0">
+          <img src="assets/posters/clip-01.jpg" alt="" loading="lazy">
+          <video controls playsinline preload="none" poster="assets/posters/clip-01.jpg">
+            <source src="assets/videos/clip-01.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <div class="play-btn" role="button" aria-label="Play clip 1" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="reel" data-reel="1">
+          <img src="assets/posters/clip-02.jpg" alt="" loading="lazy">
+          <video controls playsinline preload="none" poster="assets/posters/clip-02.jpg">
+            <source src="assets/videos/clip-02.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <div class="play-btn" role="button" aria-label="Play clip 2" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="reel" data-reel="2">
+          <img src="assets/posters/clip-03.jpg" alt="" loading="lazy">
+          <video controls playsinline preload="none" poster="assets/posters/clip-03.jpg">
+            <source src="assets/videos/clip-03.mp4" type="video/mp4">
+            Your browser does not support embedded video.
+          </video>
+          <div class="play-btn" role="button" aria-label="Play clip 3" tabindex="0">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+      </div>
+      <div class="reel-tabs">
+        <button class="reel-tab active" data-target="0" type="button">Clip 01</button>
+        <button class="reel-tab" data-target="1" type="button">Clip 02</button>
+        <button class="reel-tab" data-target="2" type="button">Clip 03</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" style="margin-top:100px;">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="dim-label" style="margin-bottom:18px;">Enquire</div>
+      <h2>Come walk the house with us.</h2>
+      <p class="lede">Every enquiry gets a reply from the family directly. Let us know a good time and we'll arrange a visit.</p>
+
+      <div class="contact-info">
+        <div class="row"><span class="k">Phone</span><span>+92 300 9661119</span></div>
+        <div class="row"><span class="k">Email</span><span>insarulhaq4@gmail.com</span></div>
+        <div class="row"><span class="k">Office</span><span>Bahria Enclave, Islamabad</span></div>
+        <div class="row"><span class="k">Hours</span><span>Mon–Sat, 9am–7pm</span></div>
+      </div>
+    </div>
+
+    <form id="enquiryForm" action="https://formspree.io/f/mkodobkw" method="POST">
+      <div class="field-row">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+92 300 0000000">
+        </div>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="I'd like to know more about the 10 Marla house in Bahria Enclave..."></textarea>
+      </div>
+      <input type="hidden" name="property" value="10 Marla Luxury Designer Furnished House — Bahria Enclave">
+      <input type="hidden" name="_subject" value="New enquiry — 10 Marla Bahria Enclave house">
+      <p class="form-status" id="formStatus" hidden></p>
+      <button class="btn" type="submit" style="align-self:flex-start;">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/logo-icon.png" alt="">
+      <div>
+        <div class="fmono">© 2026 INSHAR UL HAQ &amp; COMPANY</div>
+        <div class="tagline">Building Trust. Constructing Futures.</div>
+      </div>
+    </div>
+    <div class="fmono">ISLAMABAD, PAKISTAN</div>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <button class="lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-next" id="lbNext" aria-label="Next photo">›</button>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // --- Mobile menu toggle ---
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks){
+    function closeMenu(){
+      navLinks.classList.remove('open');
+      navToggle.textContent = '\u2630';
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.textContent = isOpen ? '\u2715' : '\u2630';
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
+  // --- Lightbox ---
+  const grid = document.getElementById('photoGrid');
+  const photos = Array.from(grid.querySelectorAll('img')).map(img => img.getAttribute('src'));
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  const lbCounter = document.getElementById('lbCounter');
+  let current = 0;
+
+  function show(i){
+    current = (i + photos.length) % photos.length;
+    lbImg.src = photos[current];
+    lbCounter.textContent = (current + 1) + ' / ' + photos.length;
+  }
+  function openLb(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeLb(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+
+  grid.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => openLb(parseInt(btn.dataset.index, 10)));
+  });
+  document.querySelector('.hero-photo img').addEventListener('click', () => openLb(0));
+
+  document.getElementById('lbClose').addEventListener('click', closeLb);
+  document.getElementById('lbPrev').addEventListener('click', e => { e.stopPropagation(); show(current - 1); });
+  document.getElementById('lbNext').addEventListener('click', e => { e.stopPropagation(); show(current + 1); });
+  lb.addEventListener('click', e => { if(e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLb();
+    if(e.key === 'ArrowLeft') show(current - 1);
+    if(e.key === 'ArrowRight') show(current + 1);
+  });
+
+  // --- Video reels ---
+  document.querySelectorAll('.reel').forEach(frame => {
+    const btn = frame.querySelector('.play-btn');
+    const img = frame.querySelector('img');
+    const vid = frame.querySelector('video');
+    function play(){
+      img.style.display='none';
+      btn.style.display='none';
+      vid.style.display='block';
+      vid.play();
+    }
+    btn.addEventListener('click', play);
+    btn.addEventListener('keydown', e => { if(e.key==='Enter'||e.key===' ') play(); });
+  });
+
+  document.querySelectorAll('.reel-tabs').forEach(tabGroup => {
+    const stage = tabGroup.previousElementSibling;
+    const tabs = tabGroup.querySelectorAll('.reel-tab');
+    const reels = stage.querySelectorAll('.reel');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.target;
+        tabs.forEach(t => t.classList.toggle('active', t === tab));
+        reels.forEach(r => {
+          const isTarget = r.dataset.reel === target;
+          r.classList.toggle('active', isTarget);
+          if(!isTarget) r.querySelector('video').pause();
+        });
+      });
+    });
+  });
+
+  // --- Enquiry form (Formspree AJAX) ---
+  const form = document.getElementById('enquiryForm');
+  const status = document.getElementById('formStatus');
+  if(form){
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      status.hidden = true;
+      try{
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){
+          form.reset();
+          status.textContent = 'Thank you — your enquiry has been sent. We will be in touch soon.';
+          status.className = 'form-status ok';
+        } else {
+          status.textContent = 'Something went wrong. Please email us directly at insarulhaq4@gmail.com.';
+          status.className = 'form-status err';
+        }
+      } catch(err){
+        status.textContent = 'Something went wrong. Please email us directly at insarulhaq4@gmail.com.';
+        status.className = 'form-status err';
+      } finally {
+        status.hidden = false;
+        btn.textContent = original;
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inshar Ul Haq &amp; Company — Luxury Homes, Islamabad</title>
+<meta name="description" content="Inshar Ul Haq &amp; Company designs and builds premium luxury homes in Islamabad. A+ quality construction, fully furnished, handed over ready to live in.">
+<link rel="icon" type="image/png" href="assets/logo-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  /* --- hero --- */
+  .hero{
+    height:100vh;min-height:640px;position:relative;
+    display:flex;align-items:flex-end;
+    background:var(--ink);
+    overflow:hidden;
+  }
+  /* rotating background slides */
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-slide{
+    position:absolute;inset:0;
+    background-size:cover;background-position:center;
+    opacity:0;
+    transform:scale(1.06);
+    transition:opacity 2s ease-in-out;
+    will-change:opacity,transform;
+  }
+  .hero-slide.active{
+    opacity:1;
+    animation:kenburns 14s ease-out forwards;
+  }
+  @keyframes kenburns{
+    from{transform:scale(1.06);}
+    to{transform:scale(1.14);}
+  }
+  /* readability scrim over photos */
+  .hero::after{
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:
+      linear-gradient(90deg, rgba(12,20,34,0.82) 0%, rgba(12,20,34,0.55) 45%, rgba(12,20,34,0.18) 100%),
+      linear-gradient(180deg, rgba(12,20,34,0.5) 0%, rgba(12,20,34,0.1) 40%, rgba(12,20,34,0.75) 100%);
+  }
+  @media (max-width:760px){
+    .hero::after{
+      background:linear-gradient(180deg, rgba(12,20,34,0.55) 0%, rgba(12,20,34,0.35) 40%, rgba(12,20,34,0.88) 100%);
+    }
+  }
+  /* slide indicator dots */
+  .hero-dots{
+    position:absolute;bottom:40px;right:48px;z-index:3;display:flex;gap:10px;
+  }
+  @media (max-width:760px){.hero-dots{right:22px;bottom:26px;}}
+  .hero-dots button{
+    width:34px;height:2px;border:0;padding:0;cursor:pointer;
+    background:rgba(250,247,240,0.35);transition:background .35s ease;
+  }
+  .hero-dots button.active{background:var(--brass-bright);}
+  /* hero stats strip */
+  .hero-stats{
+    display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:32px;
+    padding-top:22px;border-top:1px solid rgba(250,247,240,0.22);
+    max-width:640px;
+  }
+  .hero-stats div{
+    font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(250,247,240,0.95);
+  }
+  .hero-stats span{
+    display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(250,247,240,0.5);margin-bottom:5px;
+  }
+  .hero-inner{position:relative;z-index:2;padding-bottom:88px;width:100%;}
+  .hero-eyebrow{margin-bottom:22px;}
+  .hero .dim-label{color:var(--brass-bright);}
+  .hero .dim-label::before{background:var(--brass-bright);}
+  .hero h1{
+    font-size:clamp(40px,7vw,86px);
+    line-height:0.98;
+    max-width:14ch;
+    color:#faf7f0;
+  }
+  .hero h1 em{font-style:italic;color:var(--brass-bright);font-weight:300;}
+  .hero-sub{margin-top:26px;max-width:44ch;color:rgba(250,247,240,0.82);font-size:16.5px;font-weight:300;}
+  .scroll-cue{
+    position:absolute;bottom:36px;left:48px;z-index:2;
+    display:flex;align-items:center;gap:10px;color:rgba(250,247,240,0.6);
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  }
+  @media (max-width:760px){.scroll-cue{left:22px;bottom:24px;}}
+  .scroll-cue .line{width:1px;height:34px;background:rgba(250,247,240,0.3);position:relative;overflow:hidden;}
+  .scroll-cue .line::after{
+    content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;
+    background:var(--brass-bright);
+    animation:drip 2.2s ease-in-out infinite;
+  }
+  @keyframes drip{ 0%{top:-100%;} 60%{top:100%;} 100%{top:100%;} }
+
+  /* --- intro / stats --- */
+  .intro{padding:120px 0 90px;border-bottom:1px solid var(--line-soft);}
+  .intro-grid{display:grid;grid-template-columns:1.25fr 0.75fr;gap:70px;align-items:start;}
+  @media (max-width:900px){.intro-grid{grid-template-columns:1fr;gap:48px;} .stats{position:static;}}
+  .intro h2{font-size:clamp(28px,3.4vw,40px);line-height:1.18;max-width:20ch;font-weight:400;}
+  .intro p{margin-top:18px;color:var(--muted);max-width:60ch;font-size:15.5px;}
+  .intro p strong{color:var(--ink);font-weight:500;}
+  .intro p .name-highlight{color:var(--brass-bright);font-weight:500;font-family:'Fraunces',serif;font-size:16.5px;}
+  .stats{position:sticky;top:110px;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line-soft);}
+  .stat{padding:26px 0 26px 22px;border-bottom:1px solid var(--line-soft);border-left:1px solid var(--line-soft);}
+  .stat .num{font-family:'Fraunces',serif;font-size:38px;color:var(--brass);font-weight:500;}
+  .stat .label{margin-top:6px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-dim);}
+
+  /* --- listing summary card --- */
+  .listings{padding:110px 0;}
+  .listings-head{margin-bottom:48px;}
+  .listings-head h2{font-size:clamp(28px,3.4vw,40px);font-weight:400;margin-top:12px;}
+  .card{
+    display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid var(--line-soft);
+    background:var(--surface);overflow:hidden;border-radius:2px;
+  }
+  @media (max-width:900px){.card{grid-template-columns:1fr;}}
+  .card-media{position:relative;min-height:420px;}
+  .card-media img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;position:absolute;inset:0;}
+  .card-badge{
+    position:absolute;top:18px;left:18px;z-index:2;
+    background:rgba(250,247,240,0.92);color:var(--brass);
+    font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    padding:7px 12px;border-radius:2px;
+  }
+  .card-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;}
+  @media (max-width:560px){.card-body{padding:32px 24px;}}
+  .card-body h3{font-size:clamp(24px,2.6vw,32px);line-height:1.2;}
+  .card-loc{margin-top:10px;color:var(--muted);font-size:14.5px;}
+  .card-specs{
+    display:flex;flex-wrap:wrap;gap:10px 28px;margin:26px 0;
+    padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  }
+  .card-specs div{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink);}
+  .card-specs span{display:block;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted-dim);margin-bottom:4px;}
+  .card-price{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--brass);margin-bottom:26px;}
+  .card-price small{display:block;font-family:'Inter',sans-serif;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dim);margin-top:5px;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;}
+    .hero-slide.active{animation:none;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="index.html" class="logo">
+      <img src="assets/logo-icon.png" alt="Inshar Ul Haq &amp; Company">
+      <div class="logo-text">INSHAR UL HAQ <span class="amp">&amp; Company</span></div>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#homes">Homes</a>
+      <a href="#about">Our Craft</a>
+      <a href="#contact" class="cta">Inquire</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <!-- Rotating hero photos. To add a home later, just add another .hero-slide div with its photo. -->
+  <div class="hero-bg" id="heroBg">
+    <div class="hero-slide active" style="background-image:url('assets/photos/01-exterior-night.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/photos/05-drawing-room.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/photos/28-courtyard-waterfall.jpg')"></div>
+  </div>
+
+  <div class="wrap hero-inner">
+    <div class="hero-eyebrow dim-label">Inshar Ul Haq &amp; Company — Islamabad</div>
+    <h1>Luxury homes,<br>built to <em>last</em>.</h1>
+    <p class="hero-sub">A family construction company designing and building premium, fully finished homes in Islamabad — from structure to interior, every detail built and dressed by hand.</p>
+    <div class="hero-stats">
+      <div><span>Currently Listed</span>10 Marla Furnished House</div>
+      <div><span>Location</span>Bahria Enclave, Islamabad</div>
+      <div><span>Standard</span>A+ Quality Construction</div>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <button class="active" data-slide="0" aria-label="Photo 1"></button>
+    <button data-slide="1" aria-label="Photo 2"></button>
+    <button data-slide="2" aria-label="Photo 3"></button>
+  </div>
+
+  <div class="scroll-cue"><div class="line"></div>Scroll</div>
+</section>
+
+<section class="intro" id="about">
+  <div class="wrap">
+    <div class="dim-label reveal" style="margin-bottom:18px;">Welcome</div>
+    <div class="intro-grid reveal">
+      <div>
+        <h2>Welcome to Inshar Ul Haq &amp; Company.</h2>
+        <p>We are a family-run residential construction business, built on more than <strong>40 years</strong> of hands-on experience designing and building homes.</p>
+        <p>Led by <span class="name-highlight">Mian Inshar Ul Haq</span>, our team specialises in designing and building premium residential homes from the ground up — structure, interior, and exterior — delivered fully furnished and ready to move into. Every project is overseen personally by the family, not handed off to subcontractors, so the same care that goes into the foundation goes into the final coat of paint.</p>
+        <p>Structural design is led by <span class="name-highlight">Mian Inshar Ul Haq</span>, with interiors and exteriors shaped by <span class="name-highlight">Irum Inshar</span> — meaning every home carries one consistent vision from the ground up to the last light fitting.</p>
+        <p>An established name in Bahria Enclave, Islamabad, we've built a reputation for A+ quality construction, premium finishes, and homes handed over complete — with no need for a single follow-up job.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><div class="num">40+</div><div class="label">Years of Experience</div></div>
+        <div class="stat"><div class="num">A+</div><div class="label">Quality Construction Standard</div></div>
+        <div class="stat"><div class="num">2</div><div class="label">In-House Designers — Structure &amp; Interior</div></div>
+        <div class="stat"><div class="num">1</div><div class="label">Home Currently Listed</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="listings" id="homes">
+  <div class="wrap">
+    <div class="listings-head reveal">
+      <div class="dim-label">Available Now</div>
+      <h2>Our current home.</h2>
+    </div>
+
+    <a class="card reveal" href="house-bahria-enclave.html">
+      <div class="card-media">
+        <div class="card-badge">Furnished &amp; Move-in Ready</div>
+        <img src="assets/photos/01-exterior-night.jpg" alt="">
+      </div>
+      <div class="card-body">
+        <h3>10 Marla Luxury Designer Furnished House</h3>
+        <div class="card-loc">Bahria Enclave, Islamabad</div>
+        <div class="card-specs">
+          <div><span>Plot</span>10 Marla</div>
+          <div><span>Beds</span>5</div>
+          <div><span>Kitchens</span>2</div>
+          <div><span>Lounges</span>2</div>
+        </div>
+        <div class="card-price">Price on Request<small>Enquire for details</small></div>
+        <span class="btn">View Full Details →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid reveal">
+    <div>
+      <div class="dim-label" style="margin-bottom:18px;">Get In Touch</div>
+      <h2>Come walk the site with us.</h2>
+      <p class="lede">Every enquiry gets a reply from the family directly. Tell us which home you're interested in and we'll arrange a time to visit.</p>
+
+      <div class="contact-info">
+        <div class="row"><span class="k">Phone</span><span>+92 300 9661119</span></div>
+        <div class="row"><span class="k">Email</span><span>insarulhaq4@gmail.com</span></div>
+        <div class="row"><span class="k">Office</span><span>Bahria Enclave, Islamabad</span></div>
+        <div class="row"><span class="k">Hours</span><span>Mon–Sat, 9am–7pm</span></div>
+      </div>
+    </div>
+
+    <form id="enquiryForm" action="https://formspree.io/f/mkodobkw" method="POST">
+      <div class="field-row">
+        <div>
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+92 300 0000000">
+        </div>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@email.com" required>
+      </div>
+      <div>
+        <label for="property">Which home are you interested in?</label>
+        <select id="property" name="property">
+          <option>10 Marla Luxury Designer Furnished House — Bahria Enclave</option>
+          <option>General enquiry</option>
+        </select>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us what you're looking for, and when you'd like to visit."></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New enquiry from Inshar Ul Haq website">
+      <p class="form-status" id="formStatus" hidden></p>
+      <button class="btn" type="submit" style="align-self:flex-start;">Send Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/logo-icon.png" alt="">
+      <div>
+        <div class="fmono">© 2026 INSHAR UL HAQ &amp; COMPANY</div>
+        <div class="tagline">Building Trust. Constructing Futures.</div>
+      </div>
+    </div>
+    <div class="fmono">ISLAMABAD, PAKISTAN</div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // --- Mobile menu toggle ---
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks){
+    function closeMenu(){
+      navLinks.classList.remove('open');
+      navToggle.textContent = '\u2630';
+      navToggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    navToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      navToggle.textContent = isOpen ? '\u2715' : '\u2630';
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
+  // --- Rotating hero ---
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('#heroDots button');
+  let current = 0, timer;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function goTo(i){
+    current = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => s.classList.toggle('active', n === current));
+    dots.forEach((d, n) => d.classList.toggle('active', n === current));
+  }
+  function start(){
+    if(reduced || slides.length < 2) return;
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 7000);
+  }
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(parseInt(dot.dataset.slide, 10)); start(); });
+  });
+  start();
+  // pause rotation when tab is hidden
+  document.addEventListener('visibilitychange', () => {
+    if(document.hidden) clearInterval(timer); else start();
+  });
+
+  // --- Reveal on scroll ---
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // --- Enquiry form (Formspree AJAX) ---
+  const form = document.getElementById('enquiryForm');
+  const status = document.getElementById('formStatus');
+  if(form){
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      status.hidden = true;
+      try{
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if(res.ok){
+          form.reset();
+          status.textContent = 'Thank you — your enquiry has been sent. We will be in touch soon.';
+          status.className = 'form-status ok';
+        } else {
+          status.textContent = 'Something went wrong. Please email us directly at insarulhaq4@gmail.com.';
+          status.className = 'form-status err';
+        }
+      } catch(err){
+        status.textContent = 'Something went wrong. Please email us directly at insarulhaq4@gmail.com.';
+        status.className = 'form-status err';
+      } finally {
+        status.hidden = false;
+        btn.textContent = original;
+        btn.disabled = false;
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
