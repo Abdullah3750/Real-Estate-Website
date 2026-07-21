@@ -45,8 +45,9 @@
   }
   @media (max-width:760px){
     .hero::after{
-      background:linear-gradient(180deg, rgba(12,20,34,0.55) 0%, rgba(12,20,34,0.35) 40%, rgba(12,20,34,0.88) 100%);
+      background:linear-gradient(180deg, rgba(12,20,34,0.6) 0%, rgba(12,20,34,0.62) 45%, rgba(12,20,34,0.78) 70%, rgba(12,20,34,0.92) 100%);
     }
+    .hero h1, .hero-sub, .hero .dim-label{text-shadow:0 1px 12px rgba(12,20,34,0.55);}
   }
   /* slide indicator dots */
   .hero-dots{
@@ -128,6 +129,7 @@
     font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
     padding:7px 12px;border-radius:2px;
   }
+  .card-badge-sold{background:var(--ink);color:#faf7f0;letter-spacing:.14em;}
   .card-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center;}
   @media (max-width:560px){.card-body{padding:32px 24px;}}
   .card-body h3{font-size:clamp(24px,2.6vw,32px);line-height:1.2;}
@@ -180,7 +182,7 @@
     <h1>Luxury homes,<br>built to <em>last</em>.</h1>
     <p class="hero-sub">A family construction company designing and building premium, fully finished homes in Islamabad — from structure to interior, every detail built and dressed by hand.</p>
     <div class="hero-stats">
-      <div><span>Currently Listed</span>10 Marla Furnished House</div>
+      <div><span>Latest Project</span>10 Marla Furnished House</div>
       <div><span>Location</span>Bahria Enclave, Islamabad</div>
       <div><span>Standard</span>A+ Quality Construction</div>
     </div>
@@ -219,13 +221,13 @@
 <section class="listings" id="homes">
   <div class="wrap">
     <div class="listings-head reveal">
-      <div class="dim-label">Available Now</div>
-      <h2>Our current home.</h2>
+      <div class="dim-label">Recently Completed</div>
+      <h2>Our latest home.</h2>
     </div>
 
     <a class="card reveal" href="house-bahria-enclave.html">
       <div class="card-media">
-        <div class="card-badge">Furnished &amp; Move-in Ready</div>
+        <div class="card-badge card-badge-sold">Sold</div>
         <img src="assets/photos/01-exterior-night.jpg" alt="">
       </div>
       <div class="card-body">
@@ -237,7 +239,7 @@
           <div><span>Kitchens</span>2</div>
           <div><span>Lounges</span>2</div>
         </div>
-        <div class="card-price">Price on Request<small>Enquire for details</small></div>
+        <div class="card-price">Sold<small>View this project</small></div>
         <span class="btn">View Full Details →</span>
       </div>
     </a>
